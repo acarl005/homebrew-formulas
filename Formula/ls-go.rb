@@ -10,7 +10,9 @@ class LsGo < Formula
     ENV["GOPATH"] = buildpath
     (buildpath/"src/github.com/acarl005").mkpath
     ln_s buildpath, buildpath/"src/github.com/acarl005/ls-go"
-    system "go", "get", buildpath/"src/github.com/acarl005/ls-go"
+    system "pushd", buildpath/"src/github.com/acarl005/ls-go"
+    system "go", "get", "./"
+    system "popd"
     system "go", "build", "-o", bin/"ls-go"
   end
 
