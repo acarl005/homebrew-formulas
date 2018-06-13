@@ -8,13 +8,19 @@ class LsGo < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    (buildpath/"src/github.com/acarl005").mkpath
-    ln_s buildpath, buildpath/"src/github.com/acarl005/ls-go"
-    system "cd", buildpath/"src/github.com/acarl005/ls-go"
-    system "go", "get", "./"
-    system "cd", "-"
-    system "go", "build", "-o", bin/"ls-go"
+    (buildpath/"build/src").mkpath
+    ln_s buildpath, buildpath/"build/src/github.com"
+    system "GOPATH=$PWD/build go get github.com/acarl005/ls-go"
+    bin.install "build/bin/ls-go"
   end
+
+#def install
+#    system "mkdir -p build/src"
+#    system "ln -s `pwd` build/src/repo"
+#    system "GOPATH=`pwd`/build go get repo/mytool"
+#    bin.install "build/bin/mytool"
+#    ...
+#end
 
   test do
     system bin/"ls-go", "--help"
