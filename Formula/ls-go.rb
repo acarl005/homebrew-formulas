@@ -14,14 +14,6 @@ class LsGo < Formula
     bin.install "build/bin/ls-go"
   end
 
-#def install
-#    system "mkdir -p build/src"
-#    system "ln -s `pwd` build/src/repo"
-#    system "GOPATH=`pwd`/build go get repo/mytool"
-#    bin.install "build/bin/mytool"
-#    ...
-#end
-
   test do
     system bin/"ls-go", "--help"
   end
