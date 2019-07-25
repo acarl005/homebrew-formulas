@@ -1,8 +1,8 @@
 class LsGo < Formula
   desc "A more colorful, user-friendly implementation of `ls` written in Go"
   homepage "https://github.com/acarl005/ls-go"
-  url "https://github.com/acarl005/ls-go/archive/v0.0.11.tar.gz"
-  sha256 "62eccd6e379ccb73ff60b0417c07524a67b4807dbd47c5e97b3a45f148d054f0"
+  url "https://github.com/acarl005/ls-go/archive/v0.0.12.tar.gz"
+  sha256 "36a2f337f0d63c256fb340888e3f2c81b7e8621519d4bc07d92893ccddedee06"
   
   depends_on "go" => :build
 
